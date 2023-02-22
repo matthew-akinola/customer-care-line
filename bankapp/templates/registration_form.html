@@ -1,0 +1,66 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static './css/form_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>     
+<body>
+      
+    <div class="container">
+        <div class="title"><h2>Registration</h2>
+            {% include 'message.html' %}
+            <script>
+                setTimeout(function(){
+                    if ($('#msg').length > 0){
+                        $('#msg').remove();
+                    }
+                }, 3000)
+            </script>
+        </div>
+        <form action="{% url 'registration' %}" method="POST">
+            {% csrf_token%}
+         
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Company Name</span>
+                    <input id="Company_name" name="Company_name" type="text" placeholder="Enter your Name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email"  name="Email" id="Email" placeholder="Enter your Email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" id="Phone_number" name="Phone_number"  placeholder="Enter your Phone Number" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Address</span>
+                    <input type="text" id="Address" name="Address"  placeholder="Enter your Phone Number" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Country</span>
+                    <input id="Country" name="Country" placeholder="Country short-form">
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" id="Password"  name="Password" placeholder="Password" required>
+                </div>
+                <div class="gender-details">
+                        <div style="margin-left: 50%;">
+                        <ion-nav-buttons side="right">
+                            <button id="back" type="submit"><a href="{% url 'home' %}">Back</a></button>
+                        </ion-nav-buttons>
+                        </div>
+                </div>   
+                    <div class="d-grid gap-2 col-3 mx-auto">
+                        <button id="btn" class="btn btn-primary" value="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+{% endblock content %}
+</html>

@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Admin Page</title>
+        <link rel="stylesheet" href="{% static './css/admin.css' %}">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    {% block content %}
+    <body>
+        <div class="sidebar">
+            <header>Admin page</header>
+            <ul>
+                <li><a href="{% url 'home' %}"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#"><i class="fas fa-link"></i>Helpline</a></li>
+                <li><a href="#"><i class="far fa-calendar"></i>Events</a></li>
+                <li><a href="#"><i class="fas fa-bell"></i>Notification</a></li>
+                <li><a href="#"><i style="font-size:24px" class="fa fa-home">&#xf013;</i>Settings</a></li>
+                <li><a href="{% url 'logout' %}"><i class="fas fa-power-off"></i>Logout</a></li>
+            </ul>
+        </div> 
+        <div class="topnav">
+            <ul>
+                <!-- <a class="active" href="#home">Home</a> -->
+                <!-- <a href="#">About</a> -->
+                <a href=""><i style="font-size:24px" class="fa">&#xf013;</i></a>
+                <a href="#"><i class="fas fa-bell"></i></a>
+                <!-- <img src="../static/img/work.jpeg" alt="Avatar" class="avatar"> -->
+            </ul>
+          </div>
+        <div class="container">
+            <h2>Customer Care Form</h2>
+            {% include 'message.html' %}
+            {% include 'messages.html' %}
+            <script>
+                setTimeout(function(){
+                    if ($('#msg').length > 0){
+                        $('#msg').remove();
+                    }
+                }, 3000)
+            </script>
+            <form action="{% url 'customer-care' %}" method="POST">
+              {% csrf_token%}
+              <div class="row">
+                <div class="col-25">
+                  <label for="fname"></label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="fname" name="branch" placeholder="Your branch name.." required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="fname"></label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="city" name="city" placeholder="Your branch city.." required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="lname"></label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="lname" name="address" placeholder="Your branch address.." required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="lname"></label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="number" name="number" placeholder="+234-8183495670" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="country">Country</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="country" placeholder="Your branch country(short form).." required>
+                </div>
+              </div>
+              <div class="row">
+                <input type="submit" value="Submit">
+              </div>
+            </form>
+          </div>   
+    </body>
+  {% endblock content %}
+</html>

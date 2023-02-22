@@ -1,0 +1,41 @@
+{%extends './base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <body>
+        <div class="container">
+            <div class="title"><h2>Login Form</h2>
+            </div>
+            {% include 'message.html' %}
+            <script>
+                setTimeout(function(){
+                    if ($('#msg').length > 0){
+                        $('#msg').remove();
+                    }
+                }, 3000)
+            </script>
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+
+                <div class="login-info">
+                    <span class="details">Email </span>
+                    <input name="Email" id="Email" type="email" required>
+                </div>
+                <div class="secret">
+                    <span class="key">Password</span>
+                    <input name="Password" id="Password"  type="password" required>
+                </div>
+                <a href="{% url 'forget_pass' %}">Forgot Password?</a>
+                <div class="btns">
+                    <div class="inner"></div>
+                    <button id="btn"  type="submit">LOGIN</button>
+                </div>
+                <div  id="sign"class="permission">
+                    Not a member? <a href="{% url 'registration' %}">Signup now</a>
+                </div>
+                
+            </form>
+        </div>
+    </body>
+ {% endblock content %}
+</html>

@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+}
+.gender-title{
+    margin-left: auto;
+}
+#gender{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    width: 80%;
+    
+}
+.gender-details{
+    flex-wrap: nowrap;
+    flex-direction: row;
+    column-gap: 50px;
+}
+/*   */
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background: #9b59b6;
+}
+
+
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form .user-details .input-box{
+    width: calc(100% / 2 - 20px);
+}
+.user-details .input-box input{
+    width: 100%;
+    height: 45px;
+}
+#country{
+    width: 100%;
+    height: 45px;
+}
+a:hover{
+    color: white;
+}
+back a{
+    text-decoration: none;
+    color: white;
+}
+#back{
+    /* width: auto; */
+    float: right;
+    height: 33px;
+    width: 70px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    font-family:  sans-serif;
+    
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+#btn{
+     display: flex;
+     text-align: center;
+     width: 500px;
+     font-family: sans-serif;
+     font-size: large;
+     padding: 5px;
+     font-weight: 600;
+     color: white;
+     margin-top: 15px;
+     background: linear-gradient(135deg, #71b7e6, #9b59b6);
+     height: 35px;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    column-gap: 10px;
+    height: 550px;
+    padding: 25px 30px;
+    width: 590px;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 90px;
+    font-size: medium;
+    font-weight: 600;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(252, 249, 251);
+}
+.user-details{
+    font-family: sans-serif;
+    display: flex;
+    margin: 15px;
+    row-gap: 15px;
+}
+
+
+button{
+    padding: 8px 16px;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background: #e69100;
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+.alert{
+    background: #ffdb9b;
+    padding: 20px 40px;
+    min-width: 420px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    border-radius: 4px;
+    border-left: 8px solid #ffa502;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+.alert.showAlert{
+    opacity: 1;
+    pointer-events: auto;
+  }
+.alert.show{
+    animation: show_slide 1s ease forwards;
+  }
+@keyframes show_slide {
+    0%{
+      transform: translateX(100%);
+    }
+    40%{
+      transform: translateX(-10%);
+    }
+    80%{
+      transform: translateX(0%);
+    }
+    100%{
+      transform: translateX(-10px);
+    }
+  }
+  .alert-hide{
+    animation: hide_slide 1s ease forwards;
+  }
+@keyframes hide_slide {
+    0%{
+      transform: translateX(-10px);
+    }
+    40%{
+      transform: translateX(0%);
+    }
+    80%{
+      transform: translateX(-10%);
+    }
+    100%{
+      transform: translateX(100%);
+    }
+  }
+.alert .fa-exclamation-circle{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ce8500;
+    font-size: 30px;
+  }
+.alert .msg{
+    padding: 0 20px;
+    font-size: 18px;
+    color: #ce8500;
+  }
+.alert .close-btn{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffd080;
+    padding: 20px 18px;
+    cursor: pointer;
+  }
+.alert .close-btn:hover{
+    background: #ffc766;
+  }
+.alert .close-btn .fas{
+    color: #ce8500;
+    font-size: 22px;
+    line-height: 40px;
+  }
+

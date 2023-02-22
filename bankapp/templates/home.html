@@ -1,0 +1,24 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"> </script>
+<body>
+    <nav>
+        <div class="logo">E-Bank Customer Care</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="{% url 'contact_us' %}">Contact-Us</a></li>
+            <li><a href="{% url 'login' %}">Admin-Login</a></li>
+            <button id="location">Helpline</button>
+            <script src="{%static 'javascript/style.js' %}"></script> 
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <div class="text-block">
+        <h1>WELCOME TO OUR BANK SYSTEM</h1>
+        <p>Check out our services because we are here for you</p>
+      </div>
+    <section><img src="{%static './img/image.png' %}"></section>
+</body>
+{% endblock content %}
+</html>

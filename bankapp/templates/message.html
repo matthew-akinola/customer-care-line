@@ -1,0 +1,15 @@
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <div id="msg"style="background-color: red;float: left; font-size: small;" {%if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+    {% endfor %}
+    <script>
+        setTimeout(function(){
+            if ($('#msg').length > 0){
+                $('#msg').remove();
+            }
+        }, 3000)
+    </script>
+</ul>
+{% endif %}
+

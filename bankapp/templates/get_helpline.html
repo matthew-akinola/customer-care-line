@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/get_helpline.css' %}">
+<body>
+    <div class="container">
+        <div class="title"><h2>E-Bank's Helpline</h2>
+        </div>
+        <div class="country" id="country">
+           
+            <form action="{% url 'helpline' %}" method="GET">
+                {{form.as_p}}
+                <div>
+                    <label name="Country" id="Country">Country: {{country}}</label>
+                </div>
+                <div>
+                    <label name="Phone number" id="Phone number" for="">Phone number:   {{phone}}</label>
+                </div>
+                <div>
+                    <label name="city" id="city" for="">City:   {{city}}</label>
+                </div>
+                <div>
+                    <label name="Branch Name" id="Branch Name" for="">Branch Name:  {{branch}}</label>  
+                </div>   
+            </form>
+          
+        </div>
+</body>
+{% endblock content %}
+
+</html>

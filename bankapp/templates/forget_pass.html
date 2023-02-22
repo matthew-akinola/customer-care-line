@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/forget-pass.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>   
+    <body>
+        <div class="container">
+            <div class="title"><h2>Forget Password?</h2>
+                {% include 'message.html' %}
+                <script>
+                    setTimeout(function(){
+                        if ($('#msg').length > 0){
+                            $('#msg').remove();
+                        }
+                    }, 3000)
+                </script>
+            </div>
+            <form action="{% url 'forget_pass' %}" method="POST">
+                {% csrf_token %}
+                <div class="login-info">
+                    <span class="details">Email</span>
+                    <input id="email" name="email"placeholder="enter your email" type="email" required>
+                </div>
+                <div class="btns">
+                    <div class="inner"></div>
+                    <button id="btn"  type="submit">Submit</button>
+                </div>
+                <div  id="sign"class="permission">
+                    Not a member? <a href="form.html">Signup now</a>
+                </div>
+                
+            </form>
+        </div>
+    </body>
+</head>
+</html>
