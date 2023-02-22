@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from .import views
 
 urlpatterns = [
-    path('home/', views.home, name="home"),
+    path('', views.home, name="home"),
     path('login/', views.login, name="login"),
     path('customer-care/post/', views.customer_care_create, name='customer-care'),
     path('logout/', views.logout_view, name="logout"),

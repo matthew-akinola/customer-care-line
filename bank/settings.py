@@ -29,11 +29,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =True
 CORS_ALLOWED_ORIGINS = [
-  'https://customer-care-line-production.up.railway.app/'
+  'https://customer-care-line.up.railway.app/'
 
 ]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
