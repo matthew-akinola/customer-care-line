@@ -33,7 +33,7 @@ CORS_ALLOWED_ORIGINS = [
 
 ]
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['customer-care-line.up.railway.app']
 
 
 # Application definition
